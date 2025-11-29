@@ -1,0 +1,61 @@
+# -----------------------------------------------------------------------------
+# EasyRecipes Configuration
+# This file allows you to define custom crafting recipes using a simple YAML structure.
+# -----------------------------------------------------------------------------
+
+# Set to true to enable custom recipe loading
+enabled: true
+
+recipes:
+
+  # ---------------------------------------------------------------------------
+  # Example 1: Custom Shaped Recipe - "Super Pickaxe"
+  # This recipe requires a specific arrangement of items.
+  # ---------------------------------------------------------------------------
+  super_pickaxe:
+    type: SHAPED
+    # The item created when the recipe is completed
+    result:
+      material: DIAMOND_PICKAXE
+      amount: 1
+      name: "&bSuper Pickaxe"
+      lore:
+        - "&7Forged by the gods of the Overworld."
+        - "&a+5 Mining Speed"
+      # Optional: Use CustomModelData for texture packs (set to -1 to disable)
+      custom-model-data: 10001
+
+    # Define the 3x3 grid shape.
+    shape:
+      - "ddd"
+      - " s "
+      - " s "
+
+    # Define what each character in the shape maps to.
+    key:
+      d:
+        material: DIAMOND_BLOCK
+      s:
+        material: STICK
+        # Ingredients can also have custom names/lore if needed, but usually just material is enough
+        # The RecipeLoader will prioritize 'material' if present.
+
+
+  # ---------------------------------------------------------------------------
+  # Example 2: Custom Shapeless Recipe - "Gold Bar"
+  # This recipe requires the ingredients but not a specific arrangement.
+  # ---------------------------------------------------------------------------
+  gold_bar:
+    type: SHAPELESS
+    result:
+      material: GOLD_INGOT
+      amount: 4
+      name: "&6Gold Bar"
+      lore:
+        - "&7A heavier, purer bar of gold."
+
+    # Define the list of ingredients required. Order does not matter.
+    ingredients:
+      - material: GOLD_BLOCK
+      - material: IRON_INGOT
+      - material: COAL
