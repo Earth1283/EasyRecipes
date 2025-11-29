@@ -1,0 +1,6 @@
+name: EasyRecipes
+version: '1.0'
+main: io.github.Earth1283.easyRecipes.EasyRecipes
+api-version: '1.21'
+load: STARTUP
+description: Returning pre-1.21 raids to 1.21 servers!
